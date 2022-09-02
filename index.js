@@ -2,15 +2,20 @@ const prompts = require('prompts');
 
 const questions = require('./questions');
 const log = require('./log');
-const screenshoot = require('./scrapper');
+const scrapper  = require('./scrapper');
 
 
 (async () => {
   const response = await prompts(questions);
   log(response);
-  screenshoot(
+
+  scrapper.screenshot(
     response.url,
     response.screenshotFileName,
-)
+  );
+  
+  scrapper.extractHtmlWikiPageSummary(
+    response.url,
+  )
 
 })();
