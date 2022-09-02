@@ -3,8 +3,13 @@ const questions = [
       type: 'text',
       name: 'url',
       initial: 'url',
-      // style: 'emoji',
       message: 'give a page to scrap'
+    },
+    {
+      type: 'text',
+      name: 'screenshotFileName',
+      initial: 'screenshotFileName',
+      message: 'give me a screenshot filename '
     },
   ];
 

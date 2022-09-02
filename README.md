@@ -3,13 +3,12 @@
 <!-- command line
 https://github.com/klaussinani/qoa -->
 
-plutot
+prompts package
+
 https://www.npmjs.com/package/prompts
 https://github.com/terkelg/prompts
 
+scrapper package
 
-
-
-scrapper
 https://github.com/puppeteer/puppeteer
 
