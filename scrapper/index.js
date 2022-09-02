@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-const selector = '.sidebar-toc-title';
+const selector = '.sidebar-toc';
 
 module.exports = {
   async screenshot (url , fileNamePng) {
@@ -16,8 +16,12 @@ module.exports = {
     const page = await browser.newPage();
     await page.goto(url);
     // const htmlContent = await page.content();
-    const summary = await page.$(selector)
-    console.log('html summary ',summary);
+    const summaryElementHandle = await page.$(selector)
+    console.log('summaryElementHandle ',summaryElementHandle);
+    
+    const summaryText = await (await summaryElementHandle.getProperty('textContent')).jsonValue()
+    console.log('summaryText ',summaryText);
+
     await browser.close();
   },
 }
