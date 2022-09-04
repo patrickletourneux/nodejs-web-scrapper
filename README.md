@@ -1,14 +1,14 @@
-## CLI Web Scrapper
+# CLI Web Scrapper
 
-<!-- command line
-https://github.com/klaussinani/qoa -->
+test some package for a simple scrapper
 
-prompts package
+### prompts package
 
 https://www.npmjs.com/package/prompts
 https://github.com/terkelg/prompts
 
-scrapper package
+### scrapper package
 
 https://github.com/puppeteer/puppeteer
 
+### fs module

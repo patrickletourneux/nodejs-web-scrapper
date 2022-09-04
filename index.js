@@ -3,22 +3,26 @@ const prompts = require('prompts');
 const questions = require('./questions');
 const log = require('./log');
 const scrapper  = require('./scrapper');
-const writeTextToFile = require('./fs');
+const fsFunctions = require('./fsFunctions');
 
 (async () => {
   const response = await prompts(questions);
   log(response);
-
-  scrapper.screenshot(
-    response.url,
-    response.screenshotFileName,
-  );
   
-  htmlWikiPageSummary  = await scrapper.extractHtmlWikiPageSummary(
-    response.url,
-  )
+  if (response.value === 'screenshot'){
+    scrapper.screenshot(
+      response.url,
+      response.fileName,
+    );
+  }
 
-  writeTextToFile(response.screenshotFileName, htmlWikiPageSummary)
-  // console.log(htmlWikiPageSummary);
-
+  if (response.value === 'wikiSummary'){ 
+    htmlWikiPageSummary  = await scrapper.extractHtmlWikiPageSummary(
+      response.url,
+      )
+    fsFunctions.writeTextToFile(
+      response.fileName, 
+      htmlWikiPageSummary
+      )
+  }
 })();

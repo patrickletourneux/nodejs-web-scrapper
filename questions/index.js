@@ -7,10 +7,20 @@ const questions = [
     },
     {
       type: 'text',
-      name: 'screenshotFileName',
-      initial: 'screenshotFileName',
-      message: 'give me a screenshot filename '
+      name: 'fileName',
+      initial: 'fileName',
+      message: 'give a filename '
     },
+    {
+      type: 'select',
+      name: 'value',
+      message: 'make a choice',
+      choices: [
+        { title: 'screenshot', description: 'screenshot png file', value: 'screenshot' },
+        { title: 'wikiSummary', description: 'wiki summary page txt file', value: 'wikiSummary' },
+      ],
+      initial: 0
+    }
   ];
 
 module.exports = questions;
