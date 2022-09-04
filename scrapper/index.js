@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-
+const config = require('../config')
 const selector = '.sidebar-toc';
 
 module.exports = {
@@ -7,7 +7,11 @@ module.exports = {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(url);
-    await page.screenshot({path: `./screenshot/${fileNamePng}.png`});
+
+    const path = `${config.dirName}/userCreatedFiles/${fileNamePng}.png`
+    console.log(path);
+
+    await page.screenshot({path: path});
     console.log('sreenshot created')
     await browser.close();
   },
@@ -20,9 +24,12 @@ module.exports = {
     console.log('summaryElementHandle ',summaryElementHandle);
     
     const summaryText = await (await summaryElementHandle.getProperty('textContent')).jsonValue()
-    console.log('summaryText ',summaryText);
+    // console.log('summaryText ',summaryText);
 
     await browser.close();
+
+    return summaryText;
+
   },
 }
 

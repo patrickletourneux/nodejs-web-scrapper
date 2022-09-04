@@ -1,18 +1,17 @@
-const fs = require('fs-extra')
+const fs = require('fs-extra');
+const config = require('../config');
 
-data = 'tototottoto'
-// global.__basedir = __dirname;
-// TODO creer une variable d env pour le __dirname
-const folder = __dirname;
-console.log(folder)
-
-const writeToFile = (fileName, data) => {
-    fs.writeFile(`${fileName}.txt`, data, (err) => {
-        if (err) throw err;
+const writeTextToFile = (fileName, data = 'string') => {
+    fs.writeFile(`${config.dirName}/userCreatedFiles/${fileName}.txt`, data, (err) => {
+        if (err) {
+            console.log(err)
+            throw err;
+        }
         console.log(`The file ${fileName}.txt has been saved!`);
     });
 }
 
-// writeToFile('test', data)
+// const t = 'tt'
+// writeToFile(t,t)
 
-module.exports = writeToFile;
+module.exports = writeTextToFile;

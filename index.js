@@ -3,7 +3,7 @@ const prompts = require('prompts');
 const questions = require('./questions');
 const log = require('./log');
 const scrapper  = require('./scrapper');
-
+const writeTextToFile = require('./fs');
 
 (async () => {
   const response = await prompts(questions);
@@ -14,8 +14,11 @@ const scrapper  = require('./scrapper');
     response.screenshotFileName,
   );
   
-  scrapper.extractHtmlWikiPageSummary(
+  htmlWikiPageSummary  = await scrapper.extractHtmlWikiPageSummary(
     response.url,
   )
+
+  writeTextToFile(response.screenshotFileName, htmlWikiPageSummary)
+  // console.log(htmlWikiPageSummary);
 
 })();
