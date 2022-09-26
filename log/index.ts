@@ -1,8 +1,4 @@
-export type Response = {
-    url:string,
-    fileName:string,
-    value: 'screenshot' | 'wikiSummary',
-}
+import {Response } from '../types'
 
 const logResponses = (data : Response):void  => {
     console.log('log function ',  data);

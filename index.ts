@@ -2,7 +2,7 @@ const prompts = require('prompts');
 
 import questions  from './questions';
 import logResponses from './log';
-import type { Response } from './log';
+import type { Response } from './types';
 
 const scrapper = require('./scrapper');
 const fsFunctions = require('./fsFunctions');
