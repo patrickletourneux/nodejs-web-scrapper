@@ -1,19 +1,21 @@
-type Choice = {
-  title:string,
-  description: string,
-  value:string
-}
+// type Choice = {
+//   title:string,
+//   description: string,
+//   value:string
+// }
 
-type Question = {
-  type:string,
-  name:string,
-  message:string,
-  initial ?: string | number,
-  choices ? : Choice[] 
-}
+import type { PromptObject } from 'prompts';
+type Question = PromptObject
+// type Question = {
+//   type:string,
+//   name:string,
+//   message:string,
+//   initial ?: string | number,
+//   choices ? : Choice[] 
+// }
 
 
-const questions : Question[] = [
+const questions : PromptObject[]= [
   {
     type: 'text',
     name: 'url',
@@ -34,7 +36,7 @@ const questions : Question[] = [
       { title: 'screenshot', description: 'screenshot png file', value: 'screenshot' },
       { title: 'wikiSummary', description: 'wiki summary page txt file', value: 'wikiSummary' },
     ],
-    initial: 0,
+    initial: 'screenshot',
   },
 ];
 

@@ -3,7 +3,7 @@ import config from '../config'
 
 export default  {
     writeTextToFile (fileName : string, data = 'string') {
-        fs.writeFile(`${config.dirName}/userCreatedFiles/${fileName}.txt`, data, (err:any) => {
+        fs.writeFile(`${config.dirName}/userCreatedFiles/${fileName}.txt`, data, (err) => {
             if (err) {
                 console.log(err)
                 throw err;

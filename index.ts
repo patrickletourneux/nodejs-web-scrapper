@@ -3,13 +3,12 @@ import prompts from 'prompts';
 
 import questions  from './questions';
 import logResponses from './log';
-import type { Response } from './types';
 
-import scrapper from './scrapper';
+import scrapper from './scrapperPuppeteer';
 import fsFunctions from './fsFunctions';
 
 (async () => {
-  const response : Response= await prompts(questions);
+  const response = await prompts(questions);
   logResponses(response);
 
   if (response.value === 'screenshot') {

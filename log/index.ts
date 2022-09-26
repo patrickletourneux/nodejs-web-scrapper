@@ -1,6 +1,6 @@
-import {Response } from '../types'
+// import {Response } from '../types'
 
-const logResponses = (data : Response):void  => {
+const logResponses = (data : any ):void  => {
     console.log('log function ',  data);
 };
 

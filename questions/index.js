@@ -1,5 +1,17 @@
 "use strict";
+// type Choice = {
+//   title:string,
+//   description: string,
+//   value:string
+// }
 Object.defineProperty(exports, "__esModule", { value: true });
+// type Question = {
+//   type:string,
+//   name:string,
+//   message:string,
+//   initial ?: string | number,
+//   choices ? : Choice[] 
+// }
 const questions = [
     {
         type: 'text',
@@ -21,7 +33,7 @@ const questions = [
             { title: 'screenshot', description: 'screenshot png file', value: 'screenshot' },
             { title: 'wikiSummary', description: 'wiki summary page txt file', value: 'wikiSummary' },
         ],
-        initial: 0,
+        initial: 'screenshot',
     },
 ];
 exports.default = questions;
