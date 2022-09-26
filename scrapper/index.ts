@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 import config from '../config';
 
-module.exports = {
+export default {
   async screenshot (url : string , fileNamePng : string) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();

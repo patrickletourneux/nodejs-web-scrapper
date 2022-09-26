@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const puppeteer = require('puppeteer');
 const config_1 = __importDefault(require("../config"));
-module.exports = {
+exports.default = {
     async screenshot(url, fileNamePng) {
         const browser = await puppeteer.launch();
         const page = await browser.newPage();

@@ -1,11 +1,12 @@
-const prompts = require('prompts');
+// import {prompts}  from 'prompts';
+import prompts from 'prompts';
 
 import questions  from './questions';
 import logResponses from './log';
 import type { Response } from './types';
 
-const scrapper = require('./scrapper');
-const fsFunctions = require('./fsFunctions');
+import scrapper from './scrapper';
+import fsFunctions from './fsFunctions';
 
 (async () => {
   const response : Response= await prompts(questions);

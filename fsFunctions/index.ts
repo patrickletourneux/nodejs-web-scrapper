@@ -1,7 +1,7 @@
-const fs = require('fs-extra');
+import fs from 'fs-extra';
 import config from '../config'
 
-module.exports = {
+export default  {
     writeTextToFile (fileName : string, data = 'string') {
         fs.writeFile(`${config.dirName}/userCreatedFiles/${fileName}.txt`, data, (err:any) => {
             if (err) {
