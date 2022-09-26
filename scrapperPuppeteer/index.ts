@@ -1,8 +1,8 @@
 const puppeteer = require('puppeteer');
-const config = require('../config')
+import config from '../config';
 
-module.exports = {
-  async screenshot (url , fileNamePng) {
+export default {
+  async screenshot (url : string , fileNamePng : string) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(url);
@@ -14,7 +14,7 @@ module.exports = {
 
     await browser.close();
   },
-  async extractHtmlWikiPageSummary (url) {
+  async extractHtmlWikiPageSummary (url:string) {
     const selector = '.sidebar-toc';
     const browser = await puppeteer.launch();
     const page = await browser.newPage();

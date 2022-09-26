@@ -1,7 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const config = {
-    dirName : __dirname,
+    dirName: __dirname,
 };
-
-console.log('config :',config)
-
-module.exports =  config;
+console.log('config :', config);
+exports.default = config;
