@@ -1,7 +1,6 @@
-
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const log = (data) => {
-    console.log('log function ',  data);
+    console.log('log function ', data);
 };
-
-module.exports = log;
+exports.default = log;
