@@ -1,13 +1,15 @@
 const prompts = require('prompts');
 
 import questions  from './questions';
-import log from './log';
+import logResponses from './log';
+import type { Response } from './log';
+
 const scrapper = require('./scrapper');
 const fsFunctions = require('./fsFunctions');
 
 (async () => {
-  const response = await prompts(questions);
-  log(response);
+  const response : Response= await prompts(questions);
+  logResponses(response);
 
   if (response.value === 'screenshot') {
     scrapper.screenshot(
@@ -17,7 +19,7 @@ const fsFunctions = require('./fsFunctions');
   }
 
   if (response.value === 'wikiSummary') {
-    const htmlWikiPageSummary = await scrapper.extractHtmlWikiPageSummary(
+    const htmlWikiPageSummary : string = await scrapper.extractHtmlWikiPageSummary(
       response.url,
     );
     fsFunctions.writeTextToFile(

@@ -1,7 +1,11 @@
+export type Response = {
+    url:string,
+    fileName:string,
+    value: 'screenshot' | 'wikiSummary',
+}
 
-
-const log = (data : any) => {
+const logResponses = (data : Response):void  => {
     console.log('log function ',  data);
 };
 
-export default log;
+export default logResponses;
