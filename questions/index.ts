@@ -1,4 +1,17 @@
-const questions = [
+type Question = {
+  type:string,
+  name:string,
+  message:string,
+  initial ?: string | number,
+  choices ? : {
+    title:string,
+    description: string,
+    value:string
+  }[] 
+}
+
+
+const questions : Question[] = [
   {
     type: 'text',
     name: 'url',
